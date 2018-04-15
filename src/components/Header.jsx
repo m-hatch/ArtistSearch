@@ -1,5 +1,9 @@
 import React from 'react';
+import Search from './Search';
 
+/* Props:
+ * @submitSearch: function
+ */
 export default (props) => {
 
   return (
@@ -9,13 +13,7 @@ export default (props) => {
         Search for albums by your favorite artists
       </h1>
 
-      <input autoFocus="" type="text" title="Search" 
-          placeholder="Enter your favorite artist to search iTunes ..."/>
-
-      <button type="button">
-        <i className="fa fa-search"></i>
-      </button>
-        
+      <Search submitSearch={ props.submitSearch } />
 
     </div>
   );

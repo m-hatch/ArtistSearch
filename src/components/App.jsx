@@ -6,12 +6,16 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = { 
+      query: '',
       searchResults: {} 
     };
+    this.submitSearch = this.submitSearch.bind(this);
   }
 
-  componentDidMount() {
-    fetch('https://itunes.apple.com/search?term=jack+johnson&entity=album&attribute=allArtistTerm')
+  submitSearch(q) {
+    console.log(q);
+    this.setState({ query: q });
+    fetch(`https://itunes.apple.com/search?term=${ q }&entity=album&attribute=allArtistTerm`)
       .then(response => response.json())
       .then(data => this.setState({ searchResults: data }));
   }
@@ -21,7 +25,7 @@ export default class App extends React.Component {
     return (
       <div className="app">
 
-        <Header/>
+        <Header submitSearch={ this.submitSearch } />
 
       </div>
     );
