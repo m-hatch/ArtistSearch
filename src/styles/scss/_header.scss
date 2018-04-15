@@ -1,0 +1,36 @@
+.header {
+  background-color: #232328;
+  background-size: 500px 86px;
+  color: #e0e1e4;
+  padding: 20px 0 15px;
+  text-align: center;
+
+  &__title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .header {
+    padding: 45px 0 40px;
+
+    &__title {
+      font-size: 1.8em;
+      margin-bottom: 18px;
+    }
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  .header {
+    padding: 65px 0 60px;
+
+    &__title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  }
+}
