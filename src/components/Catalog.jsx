@@ -1,4 +1,5 @@
 import React from 'react';
+import Album from './Album';
 
 /* Props:
  * @query: string
@@ -9,7 +10,7 @@ export default (props) => {
 
   // build Album components
   const albumsList = props.albums.map((album, index) => 
-    <div key={ index }>{ album.collectionName }</div>
+    <Album key={ index } albumInfo={ album } />
   );
 
   // build message
@@ -31,7 +32,9 @@ export default (props) => {
 
       <h2 className="catalog__message">{ getMessage() }</h2>
 
-      { (props.albums.length) ? albumsList : null }
+      <div className="l-row">
+        { (props.albums.length) ? albumsList : null }
+      </div>
 
     </div>
   );
