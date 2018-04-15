@@ -1,4 +1,5 @@
 import React from 'react';
+import truncate from '../util/truncate';
 
 /* Props:
  * @albumInfo: object
@@ -11,14 +12,6 @@ export default (props) => {
     collectionName,
     artworkUrl100
   } = props.albumInfo;
-
-  const truncate = (s, n) => {
-    if (s.length <= n)
-      return s; 
-
-    const subString = s.substr(0, n-1);
-    return subString.substr(0, subString.lastIndexOf(' ')) + '...';
-  };
 
   return (
     <div className="l-column">
