@@ -1,0 +1,27 @@
+.l-row {
+  overflow: hidden;
+}
+
+.l-column {
+  width: 100%;
+  float: left;
+  padding: 20px;
+}
+
+@media only screen and (min-width : 480px) {
+  .l-column {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .l-column {
+    width: 33.33333333%;
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  .l-column {
+    width: 25%;
+  }
+}
