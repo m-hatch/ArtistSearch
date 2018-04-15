@@ -4,30 +4,49 @@ import truncate from '../util/truncate';
 /* Props:
  * @albumInfo: object
  */
-export default (props) => {
+export default class Album extends React.Component {
 
-  // get Album data
-  const {
-    artistName,
-    collectionName,
-    artworkUrl100
-  } = props.albumInfo;
+  constructor() {
+    super();
+    this.state = { isHover: false };
+    this.handleHover = this.handleHover.bind(this);
+  }
 
-  return (
-    <div className="l-column">
+  handleHover(mouseEvent) {
+    if ((mouseEvent.type === 'mouseenter') || (mouseEvent.type === 'mouseleave')) {
+      this.setState(prevState => ({
+        isHover: !prevState.isHover
+      }));
+    }
+  }
 
-      <div className="album">
+  render() {
 
-        <img className="album__img" src={ artworkUrl100 } alt={ collectionName }/>
+    // create Album data variables
+    const {
+      artistName,
+      collectionName,
+      artworkUrl100
+    } = this.props.albumInfo;
 
-        <div className="album__stub">
-          <p className="album__title">{ truncate(collectionName, 21) }</p>
-          <p className="album__artist">{ truncate(artistName, 44) }</p>
+    return (
+      <div className="l-column">
+
+        <div className="album" 
+          onMouseEnter={ this.handleHover }
+          onMouseLeave={ this.handleHover }>
+
+          <img className="album__img" src={ artworkUrl100 } alt={ collectionName }/>
+
+          <div className="album__stub">
+            <p className="album__title">{ truncate(collectionName, 21) }</p>
+            <p className="album__artist">{ truncate(artistName, 44) }</p>
+          </div>
+
         </div>
-
+        
       </div>
-      
-    </div>
-  );
+    );
+  }
 
 }
