@@ -22,7 +22,7 @@ export default (props) => {
     else if (props.count === 0)
       message = `No results found for ${ props.query }`;
     else
-      message = `Results 1 - ${ props.count } for ${ props.query }`;
+      message = `Results 1 - ${ props.count } for "${ props.query }"`;
 
     return message;
   }
