@@ -21,11 +21,13 @@ export default (props) => {
 
       <div className="overlay__stub">              
         
-        <a className="overlay__title" href={ collectionViewUrl }>
+        <a className="overlay__title" 
+          href={ collectionViewUrl } target="_blank">
           <h3>{ truncate(collectionName, 30) }</h3>
         </a>
 
-        <a className="overlay__artist" href={ artistViewUrl }>
+        <a className="overlay__artist" 
+          href={ artistViewUrl } target="_blank">
           <h3>{ truncate(artistName, 18) }</h3>
         </a>
 
@@ -34,15 +36,21 @@ export default (props) => {
       <ul>
         <li className="overlay__list-item">
           <i className="fa fa-music"></i>
-          <a className="overlay__link" href={ collectionViewUrl }>View Album</a>
+          <a className="overlay__link" href={ collectionViewUrl } target="_blank">
+            View Album
+          </a>
         </li>
         <li className="overlay__list-item">
           <i className="fa fa-user"></i>
-          <a className="overlay__link" href={ artistViewUrl }>Artist Page</a>
+          <a className="overlay__link" href={ artistViewUrl } target="_blank">
+            Artist Page
+          </a>
         </li>
         <li className="overlay__list-item">
           <i className="fa fa-download"></i>
-          <a className="overlay__link" href={ itunesUrl }>Get iTunes</a>
+          <a className="overlay__link" href={ itunesUrl } target="_blank">
+            Get iTunes
+          </a>
         </li>
 
         <li className="overlay__price">
