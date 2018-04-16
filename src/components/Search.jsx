@@ -29,7 +29,7 @@ export default (props) => {
           autoFocus="" 
           type="text" 
           title="Search" 
-          placeholder="Enter your favorite artist to search iTunes ..."
+          placeholder="Enter artist name to search iTunes ..."
           onKeyDown={ keydownHandler }/>
 
         <button className="search__btn" type="button" onClick={ clickHandler }>
