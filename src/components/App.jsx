@@ -8,21 +8,27 @@ export default class App extends React.Component {
     super();
     this.state = { 
       query: '',
-      resultCount: 0,
+      resultCount: null,
       searchResults: [] 
     };
     this.submitSearch = this.submitSearch.bind(this);
   }
 
+  componentDidMount() {
+    this.submitSearch('Prince');
+  }
+
   submitSearch(q) {
-    this.setState({ query: q });
-    
     fetch(`https://itunes.apple.com/search?term=${ q }&entity=album&attribute=allArtistTerm`)
       .then(response => response.json())
       .then(data => this.setState({ 
+        query: q,
         resultCount: data.resultCount,
         searchResults: data.results 
-      }));
+      }))
+      .catch(err => { 
+        console.error(err) 
+      });
   }
 
   render() {
