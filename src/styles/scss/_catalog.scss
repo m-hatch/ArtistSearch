@@ -1,8 +1,8 @@
 .catalog {
   position: relative;
-  width: 96%;
+  width: 100%;
   max-width: 1024px;
-  margin: 4% auto;
+  margin: 0 auto;
   padding: 30px;
   background-color: $white;
   box-shadow: 0px 1px 2px $shadow;
@@ -10,5 +10,12 @@
   &__message {
     font-style: italic;
     margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .catalog {
+    width: 96%;
+    margin: 4% auto;
   }
 }
